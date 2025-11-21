@@ -17,7 +17,9 @@ The Base URL for the API is: `http://localhost:3030/jsonstore`
 
 The documentation below assumes you are pre-pending the Base URL to the endpoints in order to make requests.
 
-# Endpoints: Todos
+// TODO: 
+
+<!-- # Endpoints: Todos
 
 - `/todos` -- get todo list/ create todo;
 - `/todos/{todoId}` -- get todo/update todo/ delete todo by provided id;;
@@ -94,4 +96,4 @@ Content:
   "isCompleted": boolean,
 }
 ```
-
+ -->
