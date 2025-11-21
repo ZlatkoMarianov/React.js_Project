@@ -182,18 +182,6 @@ body {
 /* RESPONSIVE – ГЛОБАЛНИ */
 
 @media (max-width: 900px) {
-    .footer-inner {
-        flex-direction: column;
-        gap: 4px;
-        text-align: center;
-    }
-
-    .header-inner {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-    
     .movie-grid {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
@@ -209,9 +197,7 @@ body {
         align-items: flex-start;
     }
 
-    .hero-actions,
-    .section-actions,
-    .auth-nav {
+    .section-actions {
         flex-direction: column;
         width: 100%;
     }
