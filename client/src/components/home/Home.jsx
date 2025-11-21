@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import './Home.css';
 
 export default function Home() {
@@ -8,14 +9,14 @@ export default function Home() {
           <h1>
             Welcome to <span>CineVerse</span>
           </h1>
-          <p>Track your favourite movies, share your top picks and manage your personal movie collection.</p>
+          <p>Track your favorite movies, share your top picks and manage your personal movie collection.</p>
           <div className="hero-actions">
-            <a href="/catalog" className="btn btn-primary">
+            <Link to="/catalog" className="btn btn-primary">
               Browse Movies
-            </a>
-            <a href="/create" className="btn btn-outline">
+            </Link>
+            <Link to="/create" className="btn btn-outline">
               Add New Movie
-            </a>
+            </Link>
           </div>
           <p className="hero-hint">Login to create, edit and manage your own movies. Guests can only browse.</p>
         </div>
@@ -40,7 +41,7 @@ export default function Home() {
               </div>
 
               <div className="stat-box">
-                <span>❤️ Favourites</span>
+                <span>❤️ Favorites</span>
                 <strong>89</strong>
               </div>
             </div>
