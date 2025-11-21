@@ -4,6 +4,7 @@ import Footer from './components/footer/Footer.jsx';
 import Header from './components/header/Header.jsx';
 import Home from './components/home/Home.jsx';
 import MoviesCatalog from './components/moviesCatalog/MoviesCatalog.jsx';
+import NotFound from './components/notFound/NotFound.jsx';
 
 function App() {
   return (
@@ -15,6 +16,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/catalog" element={<MoviesCatalog />} />
+            {/* <Route path="/catalog" element={<MoviesCatalog />} /> */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
       </main>
