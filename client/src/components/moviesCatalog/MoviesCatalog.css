@@ -1,3 +1,4 @@
+/* Movies Catalog Page */
 #catalog-page {
   padding-top: 20px;
 }
@@ -22,7 +23,7 @@
 }
 
 #catalog-page .section-actions .input[type="text"] {
-  width: 360px;      
+  width: 360px;    
 }
 
 #catalog-page .section-actions select.input {

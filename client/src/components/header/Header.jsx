@@ -7,10 +7,10 @@ export default function Header() {
   return (
     <header className="site-header">
       <div className="container header-inner">
-        <div className="logo">
+        <Link to="/" className="logo">
           <span className="logo-mark">🎥</span>
           <span className="logo-text">CineVerse</span>
-        </div>
+        </Link>
         <nav className="main-nav">
           <NavItem to="/">Home</NavItem>
           <NavItem to="/catalog">Movies</NavItem>
@@ -19,6 +19,8 @@ export default function Header() {
           <NavItem to="/my-movies">My Movies</NavItem>
         </nav>
         <div className="auth-nav">
+          
+          {/* // TODO:  */}
           <Link to="/login" className="btn btn-ghost">
             Login
           </Link>
