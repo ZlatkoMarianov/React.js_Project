@@ -32,9 +32,10 @@ export default function Header() {
           <a href="#register-page" className="btn btn-primary">
             Register
           </a>
-
+          
           {/* <span className="user-email">user@mail.com</span>
           <button className="btn btn-ghost">Logout</button> */}
+
         </div>
       </div>
     </header>

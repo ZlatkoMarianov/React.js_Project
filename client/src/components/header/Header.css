@@ -75,7 +75,6 @@
     opacity: 0.85;
 }
 
-/* Малки екрани – по желание можеш да добавиш бургер по-късно */
 @media (max-width: 600px) {
     .main-nav {
         display: none;
