@@ -1,0 +1,47 @@
+#catalog-page {
+  padding-top: 20px;
+}
+
+#catalog-page .section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+#catalog-page .section-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  white-space: nowrap; 
+}
+
+#catalog-page .section-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#catalog-page .section-actions .input[type="text"] {
+  width: 360px;      
+}
+
+#catalog-page .section-actions select.input {
+  width: 160px;
+}
+
+@media (max-width: 600px) {
+  #catalog-page .section-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #catalog-page .section-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #catalog-page .section-actions .input[type="text"],
+  #catalog-page .section-actions select.input {
+    width: 100%;
+  }
+}

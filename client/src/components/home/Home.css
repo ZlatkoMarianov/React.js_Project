@@ -1,8 +1,9 @@
 .hero {
     display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
-    gap: 24px;
-    align-items: stretch;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1.4fr);
+    gap: 32px;
+    align-items: center; 
+    padding-top: 20px;
 }
 
 .hero-text h1 {
@@ -23,21 +24,22 @@
     margin-bottom: 16px;
 }
 
-.hero-hint {
-    margin-top: 10px;
-    font-size: 13px;
-    opacity: 0.85;
-}
-
 .hero-actions {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
 }
 
+.hero-hint {
+    margin-top: 10px;
+    font-size: 13px;
+    opacity: 0.85;
+}
+
 .hero-aside {
     display: flex;
     justify-content: flex-end;
+    align-items: center; 
 }
 
 .hero-card {
@@ -45,113 +47,101 @@
         radial-gradient(circle at top left, rgba(99, 102, 241, 0.4), transparent 55%),
         radial-gradient(circle at bottom right, rgba(236, 72, 153, 0.4), transparent 55%),
         rgba(15, 23, 42, 0.95);
-    border-radius: 18px;
-    padding: 16px 18px;
-    border: 1px solid rgba(148, 163, 184, 0.5);
-    min-width: 260px;
-    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.95);
+    border-radius: 20px;
+    padding: 24px 26px;
+    border: 1px solid rgba(148, 163, 184, 0.45);
+    box-shadow: 0 22px 55px rgba(0, 0, 0, 0.5);
+    min-width: 300px;
+    max-width: 360px;
 }
 
 .hero-card h2 {
-    font-size: 16px;
-    margin-bottom: 8px;
-    text-align: center;  
-}
-
-.hero-card ul {
-    list-style: none;
-    font-size: 14px;
-}
-
-.hero-card li {
-    margin-bottom: 4px;
+    font-size: 18px;
+    margin-bottom: 14px;
+    text-align: center;
 }
 
 .stats-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-top: 12px;
-  text-align: center;           
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-top: 10px;
+    text-align: center;
 }
 
 .stat-box {
-  padding: 12px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(148, 163, 184, 0.25);
-  border-radius: 12px;
-  text-align: center;
-  
-  display: flex;               
-  flex-direction: column;
-  align-items: center;          
-  justify-content: center;
+    padding: 14px 12px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-  box-shadow: none;
-  transition: none;
-  cursor: default;
+    cursor: default;
+    box-shadow: none;
+    transition: none;
 }
 
 .stat-box span {
-  font-size: 15px;
-  opacity: 0.75;
-  margin-bottom: 3px;
+    font-size: 13px;
+    opacity: 0.75;
+    margin-bottom: 3px;
 }
 
 .stat-box strong {
-  font-size: 18px;
-  font-weight: 700;
-  color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
 }
 
 .stat-box:hover {
-  background: rgba(255, 255, 255, 0.06);
-  transform: none;
-  box-shadow: none;
+    background: rgba(255, 255, 255, 0.06);
+    transform: none;
+    box-shadow: none;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .hero {
         grid-template-columns: 1fr;
-        gap: 20px;
+        text-align: center;
     }
-    
+
     .hero-text h1 {
-        font-size: 28px;
+        font-size: 30px;
     }
-    
-    .hero-text p {
-        max-width: 100%;
+
+    .hero-actions {
+        justify-content: center;
     }
-    
+
     .hero-aside {
         justify-content: center;
     }
-    
+
     .hero-card {
-        min-width: 100%;
-        max-width: 400px;
-    }
-    
-    .stats-grid {
-        gap: 10px;
+        max-width: 420px;
+        width: 100%;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .hero-text h1 {
-        font-size: 24px;
+        font-size: 26px;
     }
-    
-    .hero-actions {
-        flex-direction: column;
-    }
-    
-    .hero-actions button {
-        width: 100%;
-    }
-    
+
     .stats-grid {
         grid-template-columns: 1fr;
+    }
+
+    .hero-card {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-text h1 {
+        font-size: 22px;
     }
 }

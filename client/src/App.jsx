@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router';
 import Footer from './components/footer/Footer.jsx';
 import Header from './components/header/Header.jsx';
 import Home from './components/home/Home.jsx';
+import MoviesCatalog from './components/moviesCatalog/MoviesCatalog.jsx';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <div className="container">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/catalog" element={<MoviesCatalog />} />
           </Routes>
         </div>
       </main>

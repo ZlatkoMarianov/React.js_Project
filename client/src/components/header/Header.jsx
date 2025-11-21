@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import './Header.css';
 
 import NavItem from './NavItem.jsx';
@@ -18,12 +19,12 @@ export default function Header() {
           <NavItem to="/my-movies">My Movies</NavItem>
         </nav>
         <div className="auth-nav">
-          <a href="#login-page" className="btn btn-ghost">
+          <Link to="/login" className="btn btn-ghost">
             Login
-          </a>
-          <a href="#register-page" className="btn btn-primary">
+          </Link>
+          <Link to="/register" className="btn btn-primary">
             Register
-          </a>
+          </Link>
 
           {/* <span className="user-email">user@mail.com</span>
           <button className="btn btn-ghost">Logout</button> */}
