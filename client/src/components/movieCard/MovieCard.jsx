@@ -10,10 +10,10 @@ export default function MovieCard() {
         />
         <span className={styles.movieBadge}>4.5 ★</span>
 
-        <button className={`${styles.favToggle} ${styles.isFav}`} title="Remove from favourites">
+        <button className={`${styles.favToggle} ${styles.isFav}`} title="Remove from favorites">
           ❤️
         </button>
-        {/* <button className={styles.favToggle} title="Add to favourites">♡</button> */}
+        {/* <button className={styles.favToggle} title="Add to favorites">♡</button> */}
       </div>
       <div className={styles.movieBody}>
         <h3 className={styles.movieTitle}>Inception</h3>

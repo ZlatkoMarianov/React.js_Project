@@ -1,7 +1,6 @@
 import { Link } from 'react-router';
+
 import styles from './Home.module.css';
-
-
 
 export default function Home() {
   return (
@@ -26,6 +25,7 @@ export default function Home() {
           <div className={styles.heroCard}>
             <h2>CineVerse Stats</h2>
 
+            {/* // TODO: change to dynamic data */}
             <div className={styles.statsGrid}>
               <div className={styles.statBox}>
                 <span>🎬 Movies</span>

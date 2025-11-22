@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router';
+import { Route, Routes } from 'react-router-dom';
 
 import Footer from './components/footer/Footer.jsx';
 import Header from './components/header/Header.jsx';
@@ -16,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/catalog" element={<MoviesCatalog />} />
+             
             {/* <Route path="/catalog" element={<MoviesCatalog />} /> */}
             <Route path="*" element={<NotFound />} />
           </Routes>

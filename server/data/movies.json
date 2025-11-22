@@ -1,3 +1,28 @@
-{
-  
-}
+[
+  {
+    "_id": "movie001",
+    "title": "Inception",
+    "year": 2010,
+    "genre": "Sci-Fi / Action",
+    "imageUrl": "https://m.media-amazon.com/images/I/81p+xe8cbnL._AC_SY679_.jpg",
+    "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.",
+    "rating": 4.5,
+    "duration": 148,
+    "_ownerId": "user001",
+    "likedBy": ["user002", "user003"],
+    "createdAt": "2025-01-20T10:00:00Z"
+  },
+  {
+    "_id": "movie002",
+    "title": "Interstellar",
+    "year": 2014,
+    "genre": "Sci-Fi / Drama",
+    "imageUrl": "https://m.media-amazon.com/images/I/91obuWzA3XL._AC_SY679_.jpg",
+    "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+    "rating": 4.7,
+    "duration": 169,
+    "_ownerId": "user001",
+    "likedBy": ["user002"],
+    "createdAt": "2025-01-22T11:30:00Z"
+  }
+]
