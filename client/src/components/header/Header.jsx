@@ -1,24 +1,24 @@
-import { Link } from 'react-router';
-import './Header.css';
+import { Link } from 'react-router-dom';
+import styles from './Header.module.css';
 
 import NavItem from './NavItem.jsx';
 
 export default function Header() {
   return (
-    <header className="site-header">
-      <div className="container header-inner">
-        <Link to="/" className="logo">
-          <span className="logo-mark">🎥</span>
-          <span className="logo-text">CineVerse</span>
+    <header className={styles.siteHeader}>
+      <div className={`container ${styles.headerInner}`}>
+        <Link to="/" className={styles.logo}>
+          <span className={styles.logoMark}>🎥</span>
+          <span className={styles.logoText}>CineVerse</span>
         </Link>
-        <nav className="main-nav">
+        <nav className={styles.mainNav}>
           <NavItem to="/">Home</NavItem>
           <NavItem to="/catalog">Movies</NavItem>
           <NavItem to="/search">Search</NavItem>
           <NavItem to="/favorites">Favorites</NavItem>
           <NavItem to="/my-movies">My Movies</NavItem>
         </nav>
-        <div className="auth-nav">
+        <div className={styles.authNav}>
           
           {/* // TODO:  */}
           <Link to="/login" className="btn btn-ghost">
@@ -28,7 +28,7 @@ export default function Header() {
             Register
           </Link>
 
-          {/* <span className="user-email">user@mail.com</span>
+          {/* <span className={styles.userEmail}>user@mail.com</span>
           <button className="btn btn-ghost">Logout</button> */}
         </div>
       </div>

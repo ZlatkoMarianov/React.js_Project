@@ -1,5 +1,4 @@
 import MovieCard from '../movieCard/MovieCard.jsx';
-import './MoviesCatalog.css';
 
 export default function MoviesCatalog() {
   return (

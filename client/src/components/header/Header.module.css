@@ -1,4 +1,4 @@
-.site-header {
+.siteHeader {
     background: rgba(15, 23, 42, 0.95);
     border-bottom: 1px solid rgba(148, 163, 184, 0.35);
     backdrop-filter: blur(12px);
@@ -7,20 +7,20 @@
     z-index: 20;
 }
 
-.header-inner {
+.headerInner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 0;
-    gap: 16px;
+    padding: 16px 0;
+    gap: 24px;
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 24px;
     text-decoration: none;
     cursor: pointer;
     transition: opacity 0.15s ease;
@@ -30,11 +30,11 @@
     opacity: 0.85;
 }
 
-.logo-mark {
-    font-size: 28px;
+.logoMark {
+    font-size: 32px;
 }
 
-.logo-text {
+.logoText {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     background: linear-gradient(90deg, #6366f1, #ec4899, #f97316);
@@ -43,14 +43,14 @@
     color: transparent;
 }
 
-.main-nav {
+.mainNav {
     display: flex;
     gap: 8px;
     align-items: center;
     flex-wrap: wrap;
 }
 
-.nav-link {
+.navLink {
     font-size: 14px;
     text-decoration: none;
     color: #e5e7eb;
@@ -60,30 +60,30 @@
     border: 1px solid transparent;
 }
 
-.nav-link:hover {
+.navLink:hover {
     background: rgba(148, 163, 184, 0.25);
     transform: translateY(-1px);
 }
 
-.nav-link.is-active {
+.navLink.isActive {
     background: linear-gradient(90deg, #6366f1, #ec4899);
     color: white;
     box-shadow: 0 6px 14px rgba(79, 70, 229, 0.5);
 }
 
-.auth-nav {
+.authNav {
     display: flex;
     gap: 8px;
     align-items: center;
 }
 
-.user-email {
+.userEmail {
     font-size: 14px;
     opacity: 0.85;
 }
 
 @media (max-width: 768px) {
-    .header-inner {
+    .headerInner {
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
@@ -93,19 +93,19 @@
         font-size: 18px;
     }
 
-    .logo-mark {
+    .logoMark {
         font-size: 24px;
     }
 }
 
 @media (max-width: 600px) {
-    .main-nav {
+    .mainNav {
         width: 100%;
         justify-content: center;
         flex-wrap: wrap;
     }
 
-    .auth-nav {
+    .authNav {
         width: 100%;
         justify-content: center;
     }

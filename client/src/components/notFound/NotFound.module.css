@@ -1,5 +1,5 @@
 /* NOT FOUND PAGE */
-.notfound-container {
+.notfoundContainer {
     width: 100%;
     padding: 80px 0;
     display: flex;
@@ -7,7 +7,7 @@
     align-items: center;
 }
 
-.notfound-box {
+.notfoundBox {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(148, 163, 184, 0.35);
     padding: 40px 32px;
@@ -19,13 +19,13 @@
     box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
 }
 
-.notfound-image {
+.notfoundImage {
     max-width: 200px;
     margin-bottom: 20px;
     opacity: 0.85;
 }
 
-.notfound-box h1 {
+.notfoundBox h1 {
     font-size: 70px;
     background: linear-gradient(90deg, #6366f1, #ec4899, #f97316);
     -webkit-background-clip: text;
@@ -35,20 +35,20 @@
     font-weight: 800;
 }
 
-.notfound-box h2 {
+.notfoundBox h2 {
     font-size: 28px;
     margin-bottom: 16px;
     font-weight: 600;
 }
 
-.notfound-box p {
+.notfoundBox p {
     opacity: 0.85;
     margin-bottom: 24px;
     line-height: 1.6;
     font-size: 15px;
 }
 
-.btn-back {
+.btnBack {
     display: inline-block;
     padding: 10px 22px;
     background: linear-gradient(90deg, #6366f1, #ec4899);
@@ -60,7 +60,7 @@
     font-weight: 500;
 }
 
-.btn-back:hover {
+.btnBack:hover {
     transform: translateY(-1px);
     box-shadow: 0 10px 24px rgba(79, 70, 229, 0.6);
 }
@@ -68,15 +68,15 @@
 /* RESPONSIVE */
 @media (max-width: 480px) {
 
-    .notfound-box {
+    .notfoundBox {
         padding: 28px 20px;
     }
 
-    .notfound-box h1 {
+    .notfoundBox h1 {
         font-size: 52px;
     }
 
-    .notfound-box h2 {
+    .notfoundBox h2 {
         font-size: 22px;
     }
 }

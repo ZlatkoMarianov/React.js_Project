@@ -1,11 +1,11 @@
-.site-footer {
+.siteFooter {
     border-top: 1px solid rgba(148, 163, 184, 0.3);
     padding: 14px 0 18px;
     margin-top: 8px;
     background: rgba(15, 23, 42, 0.95);
 }
 
-.footer-inner {
+.footerInner {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -13,12 +13,12 @@
     opacity: 0.88;
 }
 
-.footer-meta {
+.footerMeta {
     font-style: italic;
 }
 
 @media (max-width: 900px) {
-    .footer-inner {
+    .footerInner {
         flex-direction: column;
         gap: 4px;
         text-align: center;
