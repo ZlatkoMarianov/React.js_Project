@@ -1,0 +1,48 @@
+.catalogPage {
+    padding-top: 20px;
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    gap: 12px;
+}
+
+.sectionHeader h2 {
+    font-size: 24px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.sectionActions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.searchInput {
+    width: 360px;
+}
+
+.genreSelect {
+    width: 160px;
+}
+
+@media (max-width: 600px) {
+    .sectionHeader {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sectionActions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .searchInput,
+    .genreSelect {
+        width: 100%;
+    }
+}
