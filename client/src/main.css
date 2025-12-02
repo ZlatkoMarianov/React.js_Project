@@ -193,7 +193,7 @@ body {
     gap: 10px;
 }
 
-/* RESPONSIVE – ГЛОБАЛНИ */
+/* RESPONSIVE */
 
 @media (max-width: 900px) {
     .movie-grid {

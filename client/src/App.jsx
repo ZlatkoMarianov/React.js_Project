@@ -6,6 +6,7 @@ import Home from './components/home/Home.jsx';
 import MoviesCatalog from './components/moviesCatalog/MoviesCatalog.jsx';
 import NotFound from './components/notFound/NotFound.jsx';
 import Search from './components/search/Search.jsx';
+import Favorites from './components/favorites/Favorites.jsx';
 
 function App() {
   return (
@@ -18,7 +19,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/catalog" element={<MoviesCatalog />} />
             <Route path="/search" element={<Search />} />
-             
+            <Route path="/favorites" element={<Favorites />} />
+
             {/* <Route path="/catalog" element={<MoviesCatalog />} /> */}
             <Route path="*" element={<NotFound />} />
           </Routes>

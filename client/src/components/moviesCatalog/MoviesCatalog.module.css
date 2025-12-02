@@ -23,11 +23,11 @@
 }
 
 .searchInput {
-    width: 360px;
+    width: 340px !important;
 }
 
 .genreSelect {
-    width: 160px;
+    width: 200px !important;
 }
 
 @media (max-width: 600px) {
