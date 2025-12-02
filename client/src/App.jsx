@@ -13,6 +13,7 @@ import Details from './components/details/Details.jsx';
 import Edit from './components/edit/Edit.jsx';
 import Login from './components/auth/Login.jsx';
 import Register from './components/auth/Register.jsx';
+import Logout from './components/auth/Logout.jsx';
 
 function App() {
   return (
@@ -32,7 +33,7 @@ function App() {
             <Route path="/myMovies" element={<MyMovies />} />
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
-
+            <Route path="/logout" element={<Logout />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

@@ -7,7 +7,6 @@ export default function Header() {
   return (
     <header className={styles.siteHeader}>
       <div className={`container ${styles.headerInner}`}>
-
         <Link to="/" className={styles.logo}>
           <span className={styles.logoMark}>🎥</span>
           <span className={styles.logoText}>CineVerse</span>
@@ -21,7 +20,7 @@ export default function Header() {
         </nav>
 
         <div className={styles.authNav}>
-                    {/* // TODO:  */}
+          {/* // TODO:  */}
           <Link to="/login" className="btn btn-ghost">
             Login
           </Link>
@@ -29,8 +28,10 @@ export default function Header() {
             Register
           </Link>
 
-          {/* <span className={styles.userEmail}>user@mail.com</span>
-          <button className="btn btn-ghost">Logout</button> */}
+          <span className={styles.userEmail}>user@mail.com</span>
+          <Link to="/logout" className="btn btn-ghost">
+            Logout
+          </Link>
         </div>
       </div>
     </header>

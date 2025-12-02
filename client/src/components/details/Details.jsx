@@ -1,7 +1,9 @@
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import styles from './Details.module.css';
 
 export default function Details() {
+  const { movieId } = useParams();
+  
   return (
     <section className={`section ${styles.detailsPage}`}>
       <div className={styles.detailsLayout}>
@@ -25,8 +27,8 @@ export default function Details() {
             {/*  – Add/Remove favorites */}
             <button className="btn btn-primary">Add to favorites</button>
 
-            {/* <Link to={`/movies/${}/edit`} className="btn btn-ghost">Edit</Link> */}
-            <button className="btn btn-ghost">Edit</button>
+            <Link to={`/movies/${movieId}/edit`} className="btn btn-ghost">Edit</Link>
+            {/* <button className="btn btn-ghost">Edit</button> */}
             <button className="btn btn-danger">Delete</button>
           </div>
         </div>
