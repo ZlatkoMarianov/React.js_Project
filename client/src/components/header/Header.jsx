@@ -17,7 +17,7 @@ export default function Header() {
           <NavItem to="/catalog">Movies</NavItem>
           <NavItem to="/search">Search</NavItem>
           <NavItem to="/favorites">Favorites</NavItem>
-          <NavItem to="/my-movies">My Movies</NavItem>
+          <NavItem to="/myMovies">My Movies</NavItem>
         </nav>
 
         <div className={styles.authNav}>

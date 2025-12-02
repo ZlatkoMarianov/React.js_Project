@@ -7,6 +7,7 @@ import MoviesCatalog from './components/moviesCatalog/MoviesCatalog.jsx';
 import NotFound from './components/notFound/NotFound.jsx';
 import Search from './components/search/Search.jsx';
 import Favorites from './components/favorites/Favorites.jsx';
+import MyMovies from './components/myMovies/MyMovies.jsx';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/catalog" element={<MoviesCatalog />} />
             <Route path="/search" element={<Search />} />
             <Route path="/favorites" element={<Favorites />} />
+            <Route path="/myMovies" element={<MyMovies />} />
 
             {/* <Route path="/catalog" element={<MoviesCatalog />} /> */}
             <Route path="*" element={<NotFound />} />
