@@ -12,6 +12,7 @@ import Create from './components/create/Create.jsx';
 import Details from './components/details/Details.jsx';
 import Edit from './components/edit/Edit.jsx';
 import Login from './components/auth/Login.jsx';
+import Register from './components/auth/Register.jsx';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             <Route path="/search" element={<Search />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/myMovies" element={<MyMovies />} />
+            <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
 
             <Route path="*" element={<NotFound />} />
