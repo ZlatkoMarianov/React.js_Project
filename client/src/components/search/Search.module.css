@@ -1,0 +1,61 @@
+.searchPage {
+    padding-top: 24px;
+    min-height: 60vh;
+}
+
+.searchHeader {
+    margin-bottom: 20px;
+}
+
+.searchHeader h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.searchForm {
+    margin-bottom: 24px;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.formField {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.formField span {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.formActions {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.searchResults {
+    margin-top: 24px;
+}
+
+@media (max-width: 600px) {
+    .formGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .formActions {
+        flex-direction: column;
+    }
+
+    .formActions button {
+        width: 100%;
+    }
+}

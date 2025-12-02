@@ -5,6 +5,7 @@ import Header from './components/header/Header.jsx';
 import Home from './components/home/Home.jsx';
 import MoviesCatalog from './components/moviesCatalog/MoviesCatalog.jsx';
 import NotFound from './components/notFound/NotFound.jsx';
+import Search from './components/search/Search.jsx';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/catalog" element={<MoviesCatalog />} />
+            <Route path="/search" element={<Search />} />
              
             {/* <Route path="/catalog" element={<MoviesCatalog />} /> */}
             <Route path="*" element={<NotFound />} />
