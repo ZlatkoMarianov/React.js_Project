@@ -30,6 +30,15 @@
     width: 200px !important;
 }
 
+.emptyMessage {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 18px;
+    color: #666;
+    font-weight: 500;
+}
+
 @media (max-width: 600px) {
     .sectionHeader {
         flex-direction: column;

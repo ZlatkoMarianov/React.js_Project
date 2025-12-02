@@ -9,6 +9,7 @@ import Search from './components/search/Search.jsx';
 import Favorites from './components/favorites/Favorites.jsx';
 import MyMovies from './components/myMovies/MyMovies.jsx';
 import Create from './components/create/Create.jsx';
+import Details from './components/details/Details.jsx';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/catalog" element={<MoviesCatalog />} />
+            <Route path="/movies/:movieId/details" element={<Details />} />
             <Route path="/create" element={<Create />} />
             <Route path="/search" element={<Search />} />
             <Route path="/favorites" element={<Favorites />} />
