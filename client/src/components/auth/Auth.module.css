@@ -1,0 +1,85 @@
+/* AUTH PAGES (Login & Register) */
+
+.authPage {
+  padding-top: 30px;
+}
+
+.authSection {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 60vh;
+}
+
+/* CARD */
+.authCard {
+  width: 100%;
+  max-width: 380px;
+  background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.3), transparent 55%),
+    rgba(15, 23, 42, 0.96);
+  border-radius: 18px;
+  padding: 20px 22px;
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 1);
+}
+
+.authCard h2 {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+/* FORM */
+.authForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formField span {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* BUTTON */
+.authSubmit {
+  width: 100%;
+  margin-top: 10px;
+}
+
+/* ALTERNATIVE LINK */
+.authAlt {
+  margin-top: 8px;
+  font-size: 13px;
+  text-align: center;
+  opacity: 0.85;
+}
+
+.authAlt a {
+  color: #a5b4fc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.authAlt a:hover {
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 500px) {
+  .authCard {
+    padding: 16px;
+  }
+
+  .authCard h2 {
+    font-size: 20px;
+  }
+}

@@ -9,10 +9,10 @@ export default function Favorites() {
         <p className="section-subtitle">Movies you've marked as favorites.</p>
       </div>
       <div className={`movie-grid ${styles.favoritesGrid}`}>
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
-        <MovieCard />
+
+        {/* // TODO 
+        <MovieCard /> */}
+
       </div>
     </section>
   );

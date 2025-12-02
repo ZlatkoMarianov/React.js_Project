@@ -10,8 +10,10 @@ export default function MyMovies() {
         <p className="section-subtitle">Movies created by the current user (ownerId == user._id).</p>
       </div>
       <div className={`movie-grid ${styles.myMoviesGrid}`}>
-        <MovieCard />
-        <MovieCard />
+
+        {/* // TODO
+        <MovieCard /> */}
+        
         {/* <article className="movie-card">
             <div className="movie-image">
               <img

@@ -10,6 +10,8 @@ import Favorites from './components/favorites/Favorites.jsx';
 import MyMovies from './components/myMovies/MyMovies.jsx';
 import Create from './components/create/Create.jsx';
 import Details from './components/details/Details.jsx';
+import Edit from './components/edit/Edit.jsx';
+import Login from './components/auth/Login.jsx';
 
 function App() {
   return (
@@ -22,10 +24,12 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/catalog" element={<MoviesCatalog />} />
             <Route path="/movies/:movieId/details" element={<Details />} />
+            <Route path="/movies/:movieId/edit" element={<Edit />} />
             <Route path="/create" element={<Create />} />
             <Route path="/search" element={<Search />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/myMovies" element={<MyMovies />} />
+            <Route path="/login" element={<Login />} />
 
             <Route path="*" element={<NotFound />} />
           </Routes>
