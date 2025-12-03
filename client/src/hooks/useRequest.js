@@ -1,5 +1,5 @@
 
-const baseUrl = 'http://localhost:3030';
+const base_Url = 'http://localhost:3030';
 
 export default function useRequest() {
 
@@ -16,5 +16,7 @@ export default function useRequest() {
             options.headers["content-type"] = "application/json";
             options.body = JSON.stringify(data);
         }
+
+
     };
 }
