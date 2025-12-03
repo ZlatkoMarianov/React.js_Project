@@ -3,17 +3,17 @@ import { Route, Routes } from 'react-router-dom';
 import Footer from './components/footer/Footer.jsx';
 import Header from './components/header/Header.jsx';
 import Home from './components/home/Home.jsx';
-import MoviesCatalog from './components/moviesCatalog/MoviesCatalog.jsx';
+import MoviesCatalog from './components/movies/moviesCatalog/MoviesCatalog.jsx';
 import NotFound from './components/notFound/NotFound.jsx';
 import Search from './components/search/Search.jsx';
 import Favorites from './components/favorites/Favorites.jsx';
 import MyMovies from './components/myMovies/MyMovies.jsx';
-import Create from './components/create/Create.jsx';
-import Details from './components/details/Details.jsx';
-import Edit from './components/edit/Edit.jsx';
-import Login from './components/auth/Login.jsx';
-import Register from './components/auth/Register.jsx';
-import Logout from './components/auth/Logout.jsx';
+import Create from './components/movies/create/Create.jsx';
+import Details from './components/movies/details/Details.jsx';
+import Edit from './components/movies/edit/Edit.jsx';
+import Login from './components/auth/login/Login.jsx';
+import Register from './components/auth/register/Register.jsx';
+import Logout from './components/auth/logout/Logout.jsx';
 
 function App() {
   return (

@@ -1,4 +1,4 @@
-import MovieCard from '../movieCard/MovieCard.jsx';
+import MovieCard from '../movies/movieCard/MovieCard.jsx';
 import styles from './Favorites.module.css';
 
 export default function Favorites() {

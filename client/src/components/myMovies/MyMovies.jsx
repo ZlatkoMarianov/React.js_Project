@@ -1,4 +1,4 @@
-import MovieCard from '../movieCard/MovieCard.jsx';
+import MovieCard from '../movies/movieCard/MovieCard.jsx';
 import styles from './MyMovies.module.css';
 
 export default function MyMovies() {

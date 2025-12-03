@@ -1,11 +1,11 @@
 import { Link } from 'react-router';
-import styles from './Auth.module.css'
+import styles from '../Auth.module.css'
 
-export default function Login() {
-    return (
-         <section className={`section ${styles.authSection} ${styles.authPage}`}>
+export default function Register() {
+  return (
+    <section className={`section ${styles.authSection} ${styles.authPage}`}>
       <div className={styles.authCard}>
-        <h2>Login</h2>
+        <h2>Register</h2>
         <form className={styles.authForm}>
           <label className={styles.formField}>
             <span>Email</span>
@@ -15,14 +15,18 @@ export default function Login() {
             <span>Password</span>
             <input type="password" className="input" placeholder="••••••••" />
           </label>
+          <label className={styles.formField}>
+            <span>Repeat Password</span>
+            <input type="password" className="input" placeholder="••••••••" />
+          </label>
           <button className={`btn btn-primary ${styles.authSubmit}`} type="submit">
-            Login
+            Create account
           </button>
           <p className={styles.authAlt}>
-            Don't have an account? <Link to="/register">Register</Link>
+            Already have an account? <Link to="/login">Login</Link>
           </p>
         </form>
       </div>
     </section>
-    );
+  );
 }
