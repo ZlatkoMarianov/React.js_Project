@@ -2,8 +2,10 @@ import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 
 import NavItem from './NavItem.jsx';
+// import { useAuthContext } from '../../contexts/AuthContext.jsx';
 
 export default function Header() {
+  // const { user } = useAuthContext();
   return (
     <header className={styles.siteHeader}>
       <div className={`container ${styles.headerInner}`}>
@@ -28,7 +30,7 @@ export default function Header() {
             Register
           </Link>
 
-          <span className={styles.userEmail}>user@mail.com</span>
+          {/* <span className={styles.userEmail}>{user.email}</span> */}
           <Link to="/logout" className="btn btn-ghost">
             Logout
           </Link>
