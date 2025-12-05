@@ -1,9 +1,8 @@
-
 const base_Url = 'http://localhost:3030';
 
 export default function useRequest() {
 
-    const request = async (url, method, data, extraHeaders = {}) => {
+    const request = async (url, method = "GET", data = undefined, extraHeaders = {}) => {
         const options = {
             method,
             headers: {
@@ -11,21 +10,26 @@ export default function useRequest() {
             }
         };
 
-        if (data) {
-            options.headers["content-type"] = "application/json";
+        if (data !== undefined) {
+            options.headers["Content-Type"] = "application/json";
             options.body = JSON.stringify(data);
         }
 
-        const storedAuth = localStorage.getItem('auth');
+        const noAuthEndpoints = ['/users/login', '/users/register'];
+        const needsAuth = !noAuthEndpoints.includes(url);
 
-        if (storedAuth) {
-            try {
-                const { accessToken } = JSON.parse(storedAuth);
-                if (accessToken) {
-                    options.headers['X-Authorization'] = accessToken;
+        if (needsAuth) {
+            const storedAuth = localStorage.getItem('auth');
+
+            if (storedAuth) {
+                try {
+                    const { accessToken } = JSON.parse(storedAuth);
+                    if (accessToken) {
+                        options.headers['X-Authorization'] = accessToken;
+                    }
+                } catch {
+                    localStorage.removeItem('auth');
                 }
-            } catch {
-                localStorage.removeItem('auth');
             }
         }
 
@@ -38,7 +42,9 @@ export default function useRequest() {
                 if (errData.message) {
                     errorMessage = errData.message;
                 }
-            } catch { }
+            } catch {
+                // Ignore JSON parse error
+            }
 
             throw new Error(errorMessage);
         }

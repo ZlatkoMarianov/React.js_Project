@@ -40,10 +40,9 @@ export function AuthProvider({ children }) {
   };
 
   const logoutHandler = async () => {
-    await request('/users/logout', 'GET');
-
-    setUser(null)
-    localStorage.removeItem('auth')
+   
+    setUser(null);
+    localStorage.removeItem('auth');
   };
 
   const authContextValues = {
@@ -51,7 +50,7 @@ export function AuthProvider({ children }) {
     isAuthenticated: !!user?.accessToken,
     loginHandler,
     registerHandler,
-    logoutHandler
+    logoutHandler,
   };
 
   return <AuthContext.Provider value={authContextValues}>{children}</AuthContext.Provider>;
