@@ -1,17 +1,15 @@
 import { useEffect, useState } from 'react';
 import MovieCard from '../movieCard/MovieCard.jsx';
 import styles from './MoviesCatalog.module.css';
+import useMovieService from '../../../hooks/useMovieService.js';
 
 export default function MoviesCatalog() {
   const [movies, setMovies] = useState([]);
+  const { getAll } = useMovieService();
 
   useEffect(() => {
-    fetch('http://localhost:3030/data/movies')
-      .then((response) => response.json())
-      .then((result) => {
-        setMovies(result);
-      });
-  }, []);
+    getAll().then((result) => setMovies(result));
+  }, [getAll]);
 
   return (
     <section className={`section ${styles.catalogPage}`}>
@@ -31,10 +29,8 @@ export default function MoviesCatalog() {
         </div> */}
       </div>
       <div className="movie-grid">
-        {movies.length === 0 && (
-          <p className={styles.emptyMessage}>No movies added yet!</p>
-        )}
-        {movies.map(movie => (
+        {movies.length === 0 && <p className={styles.emptyMessage}>No movies added yet!</p>}
+        {movies.map((movie) => (
           <MovieCard key={movie._id} movie={movie} />
         ))}
       </div>
