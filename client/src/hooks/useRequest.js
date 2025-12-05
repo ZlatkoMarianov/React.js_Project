@@ -42,7 +42,9 @@ export default function useRequest() {
                 if (errData.message) {
                     errorMessage = errData.message;
                 }
-            } catch { }
+            } catch { 
+                // 
+            }
 
             throw new Error(errorMessage);
         }

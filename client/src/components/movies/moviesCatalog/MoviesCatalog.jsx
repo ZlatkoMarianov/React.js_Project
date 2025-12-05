@@ -6,10 +6,10 @@ export default function MoviesCatalog() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3030/jsonstore/movies')
+    fetch('http://localhost:3030/data/movies')
       .then((response) => response.json())
       .then((result) => {
-        setMovies(Object.values(result));
+        setMovies(result);
       });
   }, []);
 

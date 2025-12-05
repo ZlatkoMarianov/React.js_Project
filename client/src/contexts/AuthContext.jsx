@@ -40,6 +40,7 @@ export function AuthProvider({ children }) {
   };
 
   const logoutHandler = async () => {
+    // TODO fix await request('/users/logout', 'GET');
    
     setUser(null);
     localStorage.removeItem('auth');
@@ -56,6 +57,7 @@ export function AuthProvider({ children }) {
   return <AuthContext.Provider value={authContextValues}>{children}</AuthContext.Provider>;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useAuthContext() {
   return useContext(AuthContext);
 }
