@@ -10,8 +10,13 @@ export default function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
+  // TODO: to use useForm hook for login ??
   const submitHandler = async (e) => {
     e.preventDefault();
+
+    if (!email || !password) {
+      return alert('Email and password are required!');
+    }
 
     try {
       await loginHandler(email, password);
