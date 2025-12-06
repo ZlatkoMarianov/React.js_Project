@@ -7,7 +7,7 @@ import { useAuthContext } from '../../../contexts/AuthContext.jsx';
 export default function Details() {
   const { movieId } = useParams();
   const navigate = useNavigate();
-  const { getOne } = useMovieService();
+  const { getOne, remove } = useMovieService();
   const [movie, setMovie] = useState(null);
   const { user } = useAuthContext();
 
@@ -21,6 +21,19 @@ export default function Details() {
   }, [movieId]);
 
   const isOwner = movie && user && movie._ownerId === user._id;
+
+  const deleteMovieHandler = async () => {
+    const confirmed = confirm(`Are you sure you want to delete movie: ${movie.title}`);
+
+    if (confirmed) {
+      try {
+        await remove(movieId);
+        navigate('/catalog');
+      } catch (err) {
+        alert(err.message);
+      }
+    }
+  };
 
   if (!movie) {
     return <p>Loading...</p>;
@@ -53,7 +66,9 @@ export default function Details() {
                 <Link to={`/movies/${movieId}/edit`} className="btn btn-ghost">
                   Edit
                 </Link>
-                <button className="btn btn-danger">Delete</button>
+                <button className="btn btn-danger" onClick={deleteMovieHandler}>
+                  Delete
+                </button>
               </>
             )}
           </div>
