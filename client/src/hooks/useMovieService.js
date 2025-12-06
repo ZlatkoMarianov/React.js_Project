@@ -13,5 +13,21 @@ export default function useMovieService() {
             const query = `_ownerId="${ownerId}"`;
             return request(`/data/movies?where=${encodeURIComponent(query)}`);
         },
+
+        search: (searchParams) => {
+            const { title } = searchParams;
+            let conditions = [];
+
+            if (title) {
+                conditions.push(`title LIKE "${title}"`);
+            }
+
+            if (conditions.length === 0) {
+                return request('/data/movies');
+            }
+
+            const query = conditions.join(' AND ');
+            return request(`/data/movies?where=${encodeURIComponent(query)}`);
+        },
     };
 }

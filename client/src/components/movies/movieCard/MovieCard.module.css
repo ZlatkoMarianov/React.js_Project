@@ -16,7 +16,7 @@
     position: relative;
     overflow: hidden;
     border-radius: 14px 14px 0 0;
-    aspect-ratio: 2/3;
+    height: 400px;
     background: rgba(15, 23, 42, 0.5);
 }
 
