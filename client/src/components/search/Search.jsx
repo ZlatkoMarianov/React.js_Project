@@ -23,6 +23,7 @@ export default function Search() {
     {
       title: '',
       genre: '',
+      year: '',
     },
     searchHandler,
   );
@@ -51,14 +52,10 @@ export default function Search() {
             <span>Genre</span>
             <input type="text" className="input" placeholder="Action, Sci-Fi, Drama..." {...register('genre')} />
           </label>
-          {/* <label className={styles.formField}>
-            <span>Year (from)</span>
-            <input type="number" className="input" placeholder={1990} />
-          </label> */}
-          {/* <label className={styles.formField}>
-            <span>Year (to)</span>
-            <input type="number" className="input" placeholder={2025} />
-          </label> */}
+          <label className={styles.formField}>
+            <span>Year</span>
+            <input type="number" className="input" placeholder="e.g. 2020" min="1900" max="2025" {...register('year')} />
+          </label>
         </div>
         <div className={styles.formActions}>
           <button className="btn btn-primary" type="submit">

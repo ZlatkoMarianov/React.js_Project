@@ -14,17 +14,18 @@ export default function useMovieService() {
             return request(`/data/movies?where=${encodeURIComponent(query)}`);
         },
         search: (searchParams) => {
-            const { title, genre } = searchParams;
+            const { title, genre, year } = searchParams;
             let conditions = [];
 
             if (title) {
                 conditions.push(`title LIKE "${title}"`);
             }
-
             if (genre) {
                 conditions.push(`genre LIKE "${genre}"`);
             }
-
+            if (year) {
+                conditions.push(`year=${year}`)
+            }
             if (conditions.length === 0) {
                 return request('/data/movies');
             }
