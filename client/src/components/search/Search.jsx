@@ -27,6 +27,14 @@ export default function Search() {
     searchHandler,
   );
 
+  const clearSearchHandle = () => {
+    Object.keys(values).forEach((key) => {
+      values[key] = '';
+    });
+    setResults([]);
+    setSearched(false);
+  };
+
   return (
     <section className={`section ${styles.searchPage}`}>
       <div className={styles.searchHeader}>
@@ -56,7 +64,7 @@ export default function Search() {
           <button className="btn btn-primary" type="submit">
             Search
           </button>
-          <button className="btn btn-outline" type="button">
+          <button className="btn btn-outline" type="button" onClick={clearSearchHandle}>
             Clear
           </button>
         </div>
