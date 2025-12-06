@@ -22,7 +22,7 @@ export default function Search() {
   const { values, register, formAction } = useForm(
     {
       title: '',
-      // genre: '',
+      genre: '',
     },
     searchHandler,
   );
@@ -47,15 +47,15 @@ export default function Search() {
             <span>Title contains</span>
             <input type="text" className="input" placeholder="e.g. Matrix" {...register('title')} />
           </label>
-          {/* <label className={styles.formField}>
-            <span>Genre</span>
-            <input type="text" className="input" placeholder="Action, Sci-Fi, Drama..." />
-          </label>
           <label className={styles.formField}>
+            <span>Genre</span>
+            <input type="text" className="input" placeholder="Action, Sci-Fi, Drama..." {...register('genre')} />
+          </label>
+          {/* <label className={styles.formField}>
             <span>Year (from)</span>
             <input type="number" className="input" placeholder={1990} />
-          </label>
-          <label className={styles.formField}>
+          </label> */}
+          {/* <label className={styles.formField}>
             <span>Year (to)</span>
             <input type="number" className="input" placeholder={2025} />
           </label> */}

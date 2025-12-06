@@ -13,13 +13,16 @@ export default function useMovieService() {
             const query = `_ownerId="${ownerId}"`;
             return request(`/data/movies?where=${encodeURIComponent(query)}`);
         },
-
         search: (searchParams) => {
-            const { title } = searchParams;
+            const { title, genre } = searchParams;
             let conditions = [];
 
             if (title) {
                 conditions.push(`title LIKE "${title}"`);
+            }
+
+            if (genre) {
+                conditions.push(`genre LIKE "${genre}"`);
             }
 
             if (conditions.length === 0) {
