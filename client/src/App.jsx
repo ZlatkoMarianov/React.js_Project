@@ -14,6 +14,7 @@ import Edit from './components/movies/edit/Edit.jsx';
 import Login from './components/auth/login/Login.jsx';
 import Register from './components/auth/register/Register.jsx';
 import Logout from './components/auth/logout/Logout.jsx';
+import ProtectedRoutes from './components/guards/ProtectedRoutes.jsx';
 
 function App() {
   return (
@@ -26,14 +27,18 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/catalog" element={<MoviesCatalog />} />
             <Route path="/movies/:movieId/details" element={<Details />} />
-            <Route path="/movies/:movieId/edit" element={<Edit />} />
-            <Route path="/create" element={<Create />} />
             <Route path="/search" element={<Search />} />
-            <Route path="/favorites" element={<Favorites />} />
-            <Route path="/myMovies" element={<MyMovies />} />
+
+            <Route element={<ProtectedRoutes />}>
+              <Route path="/movies/:movieId/edit" element={<Edit />} />
+              <Route path="/create" element={<Create />} />
+              <Route path="/favorites" element={<Favorites />} />
+              <Route path="/myMovies" element={<MyMovies />} />
+              <Route path="/logout" element={<Logout />} />
+            </Route>
+
             <Route path="/register" element={<Register />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/logout" element={<Logout />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
