@@ -15,6 +15,7 @@ import Login from './components/auth/login/Login.jsx';
 import Register from './components/auth/register/Register.jsx';
 import Logout from './components/auth/logout/Logout.jsx';
 import ProtectedRoutes from './components/guards/ProtectedRoutes.jsx';
+import GuestRoutes from './components/guards/GuestRoutes.jsx';
 
 function App() {
   return (
@@ -37,8 +38,11 @@ function App() {
               <Route path="/logout" element={<Logout />} />
             </Route>
 
-            <Route path="/register" element={<Register />} />
-            <Route path="/login" element={<Login />} />
+            <Route element={<GuestRoutes />}>
+              <Route path="/register" element={<Register />} />
+              <Route path="/login" element={<Login />} />
+            </Route>
+
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
