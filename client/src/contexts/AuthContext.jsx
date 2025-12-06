@@ -41,7 +41,7 @@ export function AuthProvider({ children }) {
 
   const logoutHandler = async () => {
     // TODO fix await request('/users/logout', 'GET');
-   
+
     setUser(null);
     localStorage.removeItem('auth');
   };
@@ -49,6 +49,8 @@ export function AuthProvider({ children }) {
   const authContextValues = {
     user,
     isAuthenticated: !!user?.accessToken,
+    isGuest: !user?.accessToken,
+    email: user?.email || '',
     loginHandler,
     registerHandler,
     logoutHandler,

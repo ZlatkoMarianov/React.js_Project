@@ -2,10 +2,10 @@ import { Link } from 'react-router-dom';
 import styles from './Header.module.css';
 
 import NavItem from './NavItem.jsx';
-import useAuthStatus from '../../hooks/useAuthStatus.js';
+import { useAuthContext } from '../../contexts/AuthContext.jsx';
 
 export default function Header() {
-  const { isAuthenticated, isGuest, email } = useAuthStatus();
+  const { isAuthenticated, isGuest, email } = useAuthContext();
 
   return (
     <header className={styles.siteHeader}>

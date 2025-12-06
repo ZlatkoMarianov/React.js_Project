@@ -7,9 +7,11 @@ const initialValues = {
   title: '',
   year: '',
   genre: '',
+  duration: '',
+  rating: '',
   imageUrl: '',
   description: '',
-  rating: '',
+  
 };
 
 export default function Create() {

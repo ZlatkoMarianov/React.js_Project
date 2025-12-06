@@ -9,7 +9,7 @@ export default function MoviesCatalog() {
 
   useEffect(() => {
     getAll().then((result) => setMovies(result));
-  }, [getAll]);
+  }, []);
 
   return (
     <section className={`section ${styles.catalogPage}`}>
