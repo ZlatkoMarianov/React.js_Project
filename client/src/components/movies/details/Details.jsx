@@ -14,7 +14,7 @@ export default function Details() {
   useEffect(() => {
     getOne(movieId)
       .then((result) => {
-        console.log('got movie:', result);
+        // console.log('got movie:', result);
         setMovie(result);
       })
       .catch(() => navigate('/catalog'));

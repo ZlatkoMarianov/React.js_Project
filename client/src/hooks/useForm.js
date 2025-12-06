@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 export default function useForm(initialValues, submitHandler) {
-    const [values, setValues] = useState(initialValues);
+    const [values, setValues] = useState(initialValues || {});
 
     const changeHandler = (e) => {
         setValues(prevValues => ({
@@ -13,7 +13,7 @@ export default function useForm(initialValues, submitHandler) {
     const register = (fieldName) => {
         return {
             name: fieldName,
-            value: values[fieldName],
+            value: values[fieldName] || '',
             onChange: changeHandler,
         };
     };

@@ -18,13 +18,13 @@ export default function Create() {
   const { create } = useMovieService();
   const navigate = useNavigate();
 
-  const submitHandler = async (values) => {
+  const createMovieHandler = async (values) => {
     await create(values);
 
     navigate('/catalog');
   };
 
-  const { register, formAction } = useForm( initialValues, submitHandler);
+  const { register, formAction } = useForm( initialValues, createMovieHandler);
 
   return (
     <MovieForm
