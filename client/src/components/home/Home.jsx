@@ -15,6 +15,7 @@ export default function Home() {
             <Link to="/catalog" className="btn btn-primary">
               Browse Movies
             </Link>
+            {/* // TODO : Authorization */}
             <Link to="/create" className="btn btn-outline">
               Add New Movie
             </Link>

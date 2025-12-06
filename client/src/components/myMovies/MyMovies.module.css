@@ -33,6 +33,17 @@
     font-size: 16px;
 }
 
+.noMovies {
+  text-align: center;
+  padding: 3rem;
+  grid-column: 1 / -1; 
+}
+
+.noMovies p {
+  font-size: 1.2rem;
+  color: #c8c7d3;
+}
+
 @media (max-width: 900px) {
     .myMoviesGrid {
         grid-template-columns: repeat(2, 1fr);

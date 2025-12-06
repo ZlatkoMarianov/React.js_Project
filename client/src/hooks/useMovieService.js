@@ -9,5 +9,9 @@ export default function useMovieService() {
         create: (data) => request('/data/movies', 'POST', data),
         update: (id, data) => request(`/data/movies/${id}`, 'PUT', data),
         remove: (id) => request(`/data/movies/${id}`, 'DELETE'),
+        getByOwner: (ownerId) => {
+            const query = `_ownerId="${ownerId}"`;
+            return request(`/data/movies?where=${encodeURIComponent(query)}`);
+        },
     };
 }
