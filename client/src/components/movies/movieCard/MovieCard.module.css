@@ -39,6 +39,12 @@
     border: 1px solid rgba(250, 204, 21, 0.75);
 }
 
+.favoriteContainer {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+}
+
 .favToggle {
     position: absolute;
     top: 8px;
@@ -91,7 +97,7 @@
 .movieFooter {
     padding: 10px 12px 12px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     gap: 6px;
 }

@@ -1391,6 +1391,9 @@
                 "_ownerId": "user002",
                 "_createdOn": 1738761900000,
             },
+        },
+        favorites: {
+            // Empty collection
         }
 
     };

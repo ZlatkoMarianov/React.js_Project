@@ -26,6 +26,7 @@ export default function Search() {
       year: '',
     },
     searchHandler,
+    {},
   );
 
   const clearSearchHandle = () => {

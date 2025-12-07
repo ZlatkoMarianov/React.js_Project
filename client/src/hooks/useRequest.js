@@ -16,7 +16,9 @@ export default function useRequest() {
         }
 
         const noAuthEndpoints = ['/users/login', '/users/register'];
-        const needsAuth = !noAuthEndpoints.includes(url);
+        const publicReadEndpoints = ['/data/movies', '/data/favorites'];
+        const needsAuth = !noAuthEndpoints.includes(url) &&
+            !(publicReadEndpoints.some(endpoint => url.startsWith(endpoint)) && method === 'GET');
 
         if (needsAuth) {
             const storedAuth = localStorage.getItem('auth');
@@ -42,7 +44,7 @@ export default function useRequest() {
                 if (errData.message) {
                     errorMessage = errData.message;
                 }
-            } catch { 
+            } catch {
                 // 
             }
 

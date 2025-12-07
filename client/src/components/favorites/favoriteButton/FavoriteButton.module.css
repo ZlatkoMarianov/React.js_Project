@@ -1,0 +1,24 @@
+.favoriteBtn {
+  background: rgba(15, 23, 42, 0.85);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.favoriteBtn:hover {
+  transform: scale(1.1);
+  background: rgba(15, 23, 42, 1);
+}
+
+.favoriteBtn.isFavorite {
+  animation: heartbeat 0.3s ease;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
