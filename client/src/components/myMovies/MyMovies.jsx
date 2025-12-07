@@ -15,7 +15,6 @@ export default function MyMovies() {
     }
   }, [user?._id]);
 
-  console.log(movies);
 
   return (
     <section className={`section ${styles.myMoviesPage}`}>

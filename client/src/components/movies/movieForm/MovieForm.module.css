@@ -48,6 +48,27 @@
     margin-top: 8px;
 }
 
+/* validation */
+.inputError {
+  border-color: #ef4444 !important;
+  background: rgba(239, 68, 68, 0.05);
+}
+
+.errorMessage {
+  display: block;
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
 @media (max-width: 700px) {
     .formCard {
         padding: 18px;
