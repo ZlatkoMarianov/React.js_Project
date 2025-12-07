@@ -17,5 +17,9 @@ export default function useFavoriteService() {
         removeFavorite: (favoriteId) => {
             return request(`/data/favorites/${favoriteId}`, 'DELETE');
         },
+        getUserFavorites: (userId) => {
+            const query = `userId="${userId}"`;
+            return request(`/data/favorites?where=${encodeURIComponent(query)}`);
+        }
     };
 }
