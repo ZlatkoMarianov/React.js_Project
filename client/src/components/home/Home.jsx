@@ -4,16 +4,20 @@ import styles from './Home.module.css';
 import { useEffect, useState } from 'react';
 import useMovieService from '../../hooks/useMovieService.js';
 import MovieCard from '../movies/movieCard/MovieCard.jsx';
+import useFavoriteService from '../../hooks/useFavoriteService.js';
 
 export default function Home() {
   const [latestMovies, setLatestMovies] = useState([]);
   const [movieCount, setMovieCount] = useState(0);
+  const [favoritesCount, setFavoritesCount] = useState(0);
   const { getLatest, getCount } = useMovieService();
+  const { getFavoriteCount } = useFavoriteService();
 
   useEffect(() => {
     getLatest().then((result) => setLatestMovies(result));
     getCount().then((count) => setMovieCount(count));
-  }, []);
+    getFavoriteCount().then((count) => setFavoritesCount(count));
+  }, [getLatest,getCount, getFavoriteCount]);
 
   return (
     <>
@@ -56,9 +60,8 @@ export default function Home() {
 
               <div className={styles.statBox}>
                 <span>❤️ Favorites</span>
-                <strong>89</strong>
+                <strong>{favoritesCount}</strong>
               </div>
-              
             </div>
           </div>
         </div>

@@ -20,6 +20,9 @@ export default function useFavoriteService() {
         getUserFavorites: (userId) => {
             const query = `userId="${userId}"`;
             return request(`/data/favorites?where=${encodeURIComponent(query)}`);
+        },
+         getFavoriteCount: () => {
+            return request('/data/favorites?count');
         }
     };
 }
