@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-export default function useForm(initialValues, submitHandler, validateMovie) {
+export default function useForm(initialValues, submitHandler, validate) {
     const [values, setValues] = useState(initialValues || {});
     const [errors, setErrors] = useState({});
     const [touched, setTouched] = useState({});
 
     const validateField = (fieldName, value) => {
-        if (validateMovie[fieldName]) {
-            return validateMovie[fieldName](value);
+        if (validate[fieldName]) {
+            return validate[fieldName](value, values);
         }
         return null;
     };
@@ -30,7 +30,7 @@ export default function useForm(initialValues, submitHandler, validateMovie) {
     };
 
     const handleBlur = (e) => {
-        const [name, value] = e.target;
+        const { name, value } = e.target;
 
         setTouched(prevTouched => ({
             ...prevTouched,
@@ -57,7 +57,7 @@ export default function useForm(initialValues, submitHandler, validateMovie) {
         const newErrors = {};
         let hasErrors = false;
 
-        Object.keys(validateMovie).forEach(fieldName => {
+        Object.keys(validate).forEach(fieldName => {
             const error = validateField(fieldName, values[fieldName]);
             if (error) {
                 newErrors[fieldName] = error;
@@ -66,7 +66,7 @@ export default function useForm(initialValues, submitHandler, validateMovie) {
         });
 
         const allTouched = {};
-        Object.keys(validateMovie).forEach(fieldName => {
+        Object.keys(validate).forEach(fieldName => {
             allTouched[fieldName] = true;
         });
 

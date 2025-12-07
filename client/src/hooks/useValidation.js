@@ -38,7 +38,28 @@ export default function useValidation() {
         },
     };
 
+    const validateAuth = {
+        email: (value) => {
+            if (!value?.trim()) return 'Email is required';
+            if (!value.includes('@')) return 'Please enter a valid email address';
+            return null;
+        },
+        password: (value) => {
+            if (!value) return 'Password is required';
+            if (value.length < 6) return 'Password must be at least 6 characters';
+            return null;
+        },
+        rePassword: (value, allValues) => {
+            if (!value) return 'Please confirm your password';
+            if (value !== allValues?.password) return 'Passwords do not match';
+            return null;
+        },
+    };
+
+
+
     return {
         validateMovie,
+        validateAuth,
     };
 }
