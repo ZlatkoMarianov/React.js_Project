@@ -1,8 +1,20 @@
 import { Link } from 'react-router';
-
 import styles from './Home.module.css';
 
+import { useEffect, useState } from 'react';
+import useMovieService from '../../hooks/useMovieService.js';
+import MovieCard from '../movies/movieCard/MovieCard.jsx';
+
 export default function Home() {
+  const [latestMovies, setLatestMovies] = useState([]);
+  const [movieCount, setMovieCount] = useState(0);
+  const { getLatest, getCount } = useMovieService();
+
+  useEffect(() => {
+    getLatest().then((result) => setLatestMovies(result));
+    getCount().then((count) => setMovieCount(count));
+  }, []);
+
   return (
     <>
       <section className={`section ${styles.hero}`} id="home-page">
@@ -29,13 +41,13 @@ export default function Home() {
             <div className={styles.statsGrid}>
               <div className={styles.statBox}>
                 <span>🎬 Movies</span>
-                <strong>128</strong>
+                <strong>{movieCount}</strong>
               </div>
 
-              <div className={styles.statBox}>
+              {/* <div className={styles.statBox}>
                 <span>👤 Members</span>
                 <strong>42</strong>
-              </div>
+              </div> */}
 
               <div className={styles.statBox}>
                 <span>⭐ Rating</span>
@@ -46,13 +58,19 @@ export default function Home() {
                 <span>❤️ Favorites</span>
                 <strong>89</strong>
               </div>
+              
             </div>
           </div>
         </div>
       </section>
-
-      {/* // TODO: BONUS */}
-      {/* LatestMovies */}
+      <section className="section">
+        <h2>Latest Movies</h2>
+        <div className="movie-grid">
+          {latestMovies.map((movie) => (
+            <MovieCard key={movie._id} movie={movie} />
+          ))}
+        </div>
+      </section>
     </>
   );
 }

@@ -13,6 +13,13 @@ export default function useMovieService() {
             const query = `_ownerId="${ownerId}"`;
             return request(`/data/movies?where=${encodeURIComponent(query)}`);
         },
+        getLatest: (count = 3) => {
+            const query = `?sortBy=_createdOn desc&pageSize=${count}`;
+            return request(`/data/movies${query}`);
+        },
+        getCount: () => {
+            return request('/data/movies?count');
+        },
         search: (searchParams) => {
             const { title, genre, year } = searchParams;
             let conditions = [];
@@ -24,7 +31,7 @@ export default function useMovieService() {
                 conditions.push(`genre LIKE "${genre}"`);
             }
             if (year) {
-                conditions.push(`year=${year}`)
+                conditions.push(`year=${year}`);
             }
             if (conditions.length === 0) {
                 return request('/data/movies');
