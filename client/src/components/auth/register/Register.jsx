@@ -12,19 +12,10 @@ const initialValues = {
 
 export default function Register() {
   const { registerHandler } = useAuthContext();
-  const { validateAuth } = useValidation();
+  const { validateAuthRegister } = useValidation();
   const navigate = useNavigate();
 
   const registerSubmitHandler = async (values) => {
-    // const { email, password, rePassword } = values;
-
-    // if (!email || !password || !rePassword) {
-    //   return alert('All fields are required!');
-    // }
-
-    // if (password !== rePassword) {
-    //   return alert('Password mismatch!');
-    // }
 
     try {
       await registerHandler(values.email, values.password);
@@ -34,7 +25,7 @@ export default function Register() {
     }
   };
 
-  const { register, formAction, errors, touched } = useForm(initialValues, registerSubmitHandler, validateAuth);
+  const { register, formAction, errors, touched } = useForm(initialValues, registerSubmitHandler, validateAuthRegister);
 
   return (
     <section className={`section ${styles.authSection} ${styles.authPage}`}>
