@@ -16,6 +16,7 @@ import Register from './components/auth/register/Register.jsx';
 import Logout from './components/auth/logout/Logout.jsx';
 import ProtectedRoutes from './components/guards/ProtectedRoutes.jsx';
 import GuestRoutes from './components/guards/GuestRoutes.jsx';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
       </main>
 
       <Footer />
+      <ToastContainer />
     </>
   );
 }

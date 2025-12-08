@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useAuthContext } from '../../../contexts/AuthContext.jsx';
 import { useNavigate } from 'react-router';
+import { toast } from 'react-toastify';
 
 export default function Logout() {
   const { logoutHandler } = useAuthContext();
@@ -8,9 +9,12 @@ export default function Logout() {
 
   useEffect(() => {
     logoutHandler()
-      .then(() => navigate('/'))
+      .then(() => {
+        navigate('/')
+        toast.success('You have been logged out')
+      })
       .catch(() => {
-        alert('Problem with logout');
+        toast.error('Problem with logout');
         navigate('/');
       });
   }, [logoutHandler, navigate]);

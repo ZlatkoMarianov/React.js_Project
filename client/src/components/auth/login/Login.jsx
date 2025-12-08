@@ -3,6 +3,7 @@ import styles from '../Auth.module.css';
 import { useAuthContext } from '../../../contexts/AuthContext.jsx';
 import useValidation from '../../../hooks/useValidation.js';
 import useForm from '../../../hooks/useForm.js';
+import { toast } from 'react-toastify';
 
 const initialValues = {
   email: '',
@@ -17,9 +18,10 @@ export default function Login() {
   const loginSubmitHandler = async (values) => {
     try {
       await loginHandler(values.email, values.password);
+      toast.success('Welcome back!');
       navigate('/');
     } catch (err) {
-      alert(err.message);
+      toast.error(err.message);
     }
   };
 

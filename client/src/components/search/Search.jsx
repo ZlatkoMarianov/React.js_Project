@@ -3,6 +3,7 @@ import styles from './Search.module.css';
 import useMovieService from '../../hooks/useMovieService.js';
 import useForm from '../../hooks/useForm.js';
 import MovieCard from '../movies/movieCard/MovieCard.jsx';
+import { toast } from 'react-toastify';
 
 export default function Search() {
   const [results, setResults] = useState([]);
@@ -15,7 +16,7 @@ export default function Search() {
       setResults(movies);
       setSearched(true);
     } catch (err) {
-      alert(err.message);
+      toast.error(err.message);
     }
   };
 

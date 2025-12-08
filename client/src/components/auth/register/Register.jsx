@@ -3,6 +3,7 @@ import styles from '../Auth.module.css';
 import { useAuthContext } from '../../../contexts/AuthContext.jsx';
 import useForm from '../../../hooks/useForm.js';
 import useValidation from '../../../hooks/useValidation.js';
+import { toast } from 'react-toastify';
 
 const initialValues = {
   email: '',
@@ -19,9 +20,10 @@ export default function Register() {
 
     try {
       await registerHandler(values.email, values.password);
+      toast.success('Account created successfully!');
       navigate('/');
     } catch (err) {
-      alert(err.message);
+      toast.error(err.message);
     }
   };
 

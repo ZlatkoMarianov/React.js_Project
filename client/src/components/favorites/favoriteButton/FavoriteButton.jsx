@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import styles from './FavoriteButton.module.css';
 import { useAuthContext } from '../../../contexts/AuthContext.jsx';
 import useFavoriteService from '../../../hooks/useFavoriteService.js';
+import { toast } from 'react-toastify';
 
 export default function FavoriteButton({ movieId }) {
   const { user, isAuthenticated } = useAuthContext();
@@ -18,7 +19,7 @@ export default function FavoriteButton({ movieId }) {
 
   const handleToggle = async () => {
     if (!isAuthenticated) {
-      return alert('Please login to add favorites!');
+      return toast.warning('Please login to add favorites!');
     }
 
     try {
@@ -26,13 +27,15 @@ export default function FavoriteButton({ movieId }) {
         // Unlike
         await removeFavorite(favorite._id);
         setFavorite(null);
+        // toast.success('Removed from favorites');
       } else {
         // Like
         const newFavorite = await addFavorite(user._id, movieId);
         setFavorite(newFavorite);
+        // toast.success('Added to favorites');
       }
     } catch (err) {
-      alert(err.message);
+    toast.error(err.message);
     }
   };
 

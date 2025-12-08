@@ -5,6 +5,7 @@ import useMovieService from '../../hooks/useMovieService.js';
 import MovieCard from '../movies/movieCard/MovieCard.jsx';
 import styles from './Favorites.module.css';
 import Spinner from '../common/Spinner.jsx';
+import { toast } from 'react-toastify';
 
 export default function Favorites() {
   const { user } = useAuthContext();
@@ -22,7 +23,7 @@ export default function Favorites() {
           const moviesData = await Promise.all(moviePromises);
           setMovies(moviesData);
         })
-        .catch((err) => alert(err.message))
+        .catch((err) => toast.error(err.message))
         .finally(() => setLoading(false));
     }
   }, [user?._id]);

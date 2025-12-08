@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import useRequest from '../hooks/useRequest.js';
+import { toast } from 'react-toastify';
 
 const AuthContext = createContext();
 
@@ -46,7 +47,7 @@ export function AuthProvider({ children }) {
     try {
       await request('/users/logout', 'POST');
     } catch {
-      alert('Logout failed on server, but you have been logged out locally.');
+      toast.warning('Logout failed on server, but you have been logged out locally.');
     } finally {
       setUser(null);
       localStorage.removeItem('auth');

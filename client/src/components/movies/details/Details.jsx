@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { useAuthContext } from '../../../contexts/AuthContext.jsx';
 import FavoriteButton from '../../favorites/favoriteButton/FavoriteButton.jsx';
 import Spinner from '../../common/Spinner.jsx';
+import { toast } from 'react-toastify';
 
 export default function Details() {
   const { user } = useAuthContext();
@@ -30,9 +31,10 @@ export default function Details() {
     if (confirmed) {
       try {
         await remove(movieId);
+        toast.success('Movie deleted successfully!')
         navigate('/catalog');
       } catch (err) {
-        alert(err.message);
+        toast.error(err.message);
       }
     }
   };

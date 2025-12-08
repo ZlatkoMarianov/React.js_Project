@@ -3,6 +3,7 @@ import useMovieService from '../../../hooks/useMovieService.js';
 import { useEffect, useState } from 'react';
 import EditForm from './EditForm.jsx';
 import Spinner from '../../common/Spinner.jsx';
+import { toast } from 'react-toastify';
 
 export default function Edit() {
   const { movieId } = useParams();
@@ -21,9 +22,10 @@ export default function Edit() {
   const editMovieHandler = async (values) => {
     try {
       await update(movieId, values);
+      toast.success('Movie updated successfully!');
       navigate(`/movies/${movieId}/details`);
     } catch (err) {
-      alert(err.message);
+      toast.error(err.message);
     }
   };
 

@@ -3,6 +3,7 @@ import MovieCard from '../movieCard/MovieCard.jsx';
 import styles from './MoviesCatalog.module.css';
 import useMovieService from '../../../hooks/useMovieService.js';
 import Spinner from '../../common/Spinner.jsx';
+import { toast } from 'react-toastify';
 
 export default function MoviesCatalog() {
   const [movies, setMovies] = useState([]);
@@ -13,7 +14,7 @@ export default function MoviesCatalog() {
     setLoading(true);
     getAll()
       .then((result) => setMovies(result))
-      .catch((err) => alert(err.message))
+      .catch((err) => toast.error(err.message))
       .finally(() => setLoading(false));
   }, []);
 
