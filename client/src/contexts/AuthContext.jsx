@@ -4,6 +4,7 @@ import useRequest from '../hooks/useRequest.js';
 const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
+  const [authChecked, setAuthChecked] = useState(false);
   const [user, setUser] = useState(null);
   const { request } = useRequest();
 
@@ -11,6 +12,7 @@ export function AuthProvider({ children }) {
     const stored = localStorage.getItem('auth');
 
     if (!stored) {
+      setAuthChecked(true);
       return;
     }
 
@@ -20,6 +22,7 @@ export function AuthProvider({ children }) {
     } catch {
       localStorage.removeItem('auth');
     }
+    setAuthChecked(true);
   }, []);
 
   const saveAuth = (authData) => {
@@ -43,7 +46,7 @@ export function AuthProvider({ children }) {
     try {
       await request('/users/logout', 'POST');
     } catch {
-      alert('Logout failed on server, but you have been logged out locally.')
+      alert('Logout failed on server, but you have been logged out locally.');
     } finally {
       setUser(null);
       localStorage.removeItem('auth');
@@ -52,6 +55,7 @@ export function AuthProvider({ children }) {
 
   const authContextValues = {
     user,
+    authChecked,
     isAuthenticated: !!user?.accessToken,
     isGuest: !user?.accessToken,
     email: user?.email || '',
