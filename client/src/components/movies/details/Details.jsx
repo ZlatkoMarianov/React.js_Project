@@ -4,20 +4,22 @@ import useMovieService from '../../../hooks/useMovieService.js';
 import { useEffect, useState } from 'react';
 import { useAuthContext } from '../../../contexts/AuthContext.jsx';
 import FavoriteButton from '../../favorites/favoriteButton/FavoriteButton.jsx';
+import Spinner from '../../common/Spinner.jsx';
 
 export default function Details() {
+  const { user } = useAuthContext();
   const { movieId } = useParams();
   const navigate = useNavigate();
   const { getOne, remove } = useMovieService();
   const [movie, setMovie] = useState(null);
-  const { user } = useAuthContext();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     getOne(movieId)
-      .then((result) => {
-        setMovie(result);
-      })
-      .catch(() => navigate('/catalog'));
+      .then((result) => setMovie(result))
+      .catch(() => navigate('/catalog'))
+      .finally(() => setLoading(false));
   }, [movieId]);
 
   const isOwner = movie && user && movie._ownerId === user._id;
@@ -35,8 +37,8 @@ export default function Details() {
     }
   };
 
-  if (!movie) {
-    return <p>Loading...</p>;
+  if (loading) {
+    return <Spinner />;
   }
 
   return (
@@ -68,8 +70,6 @@ export default function Details() {
               <p>{movie.description}</p>
             </div>
             <div className={styles.detailsActions}>
-        
-
               {isOwner && (
                 <>
                   <Link to={`/movies/${movieId}/edit`} className="btn btn-ghost">

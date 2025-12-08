@@ -4,24 +4,32 @@ import useFavoriteService from '../../hooks/useFavoriteService.js';
 import useMovieService from '../../hooks/useMovieService.js';
 import MovieCard from '../movies/movieCard/MovieCard.jsx';
 import styles from './Favorites.module.css';
+import Spinner from '../common/Spinner.jsx';
 
 export default function Favorites() {
   const { user } = useAuthContext();
   const { getUserFavorites } = useFavoriteService();
   const { getOne } = useMovieService();
   const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     if (user?._id) {
+      setLoading(true);
       getUserFavorites(user._id)
         .then(async (favorites) => {
           const moviePromises = favorites.map((fav) => getOne(fav.movieId));
           const moviesData = await Promise.all(moviePromises);
           setMovies(moviesData);
         })
-        .catch((err) => alert(err.message));
+        .catch((err) => alert(err.message))
+        .finally(() => setLoading(false));
     }
   }, [user?._id]);
+
+  if (loading) {
+    return <Spinner />;
+  }
 
   return (
     <section className={`section ${styles.favoritesPage}`}>
