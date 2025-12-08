@@ -92,6 +92,9 @@
     opacity: 0.9;
     max-height: 60px;
     overflow: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 .movieFooter {

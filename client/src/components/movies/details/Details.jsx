@@ -42,40 +42,46 @@ export default function Details() {
 
   return (
     <section className={`section ${styles.detailsPage}`}>
-      <div className={styles.detailsLayout}>
-        <div className={styles.detailsPoster}>
-          <img src={movie.imageUrl} alt={movie.title} />
-        </div>
-        <div className={styles.detailsContent}>
-          <div className={styles.titleWithFavorite}>
-            <h2>{movie.title}</h2>
-            <FavoriteButton movieId={movie._id} />
+      <div className={styles.detailsCard}>
+        <div className={styles.detailsLayout}>
+          <div className={styles.detailsPoster}>
+            <img src={movie.imageUrl} alt={movie.title} />
           </div>
-          <p className={styles.detailsMeta}>
-            Year: {movie.year} · {movie.duration} min
-          </p>
-          <p>{movie.genre}</p>
-          <p className={styles.detailsRating}>
-            Rating: <strong> {movie.rating} / 5</strong> ★
-          </p>
-          <p className={styles.detailsDescription}>{movie.description}</p>
-          <div className={styles.detailsActions}>
-            <Link to="/catalog" className="btn btn-outline">
-              Back to catalog
-            </Link>
-            {/*  – Add/Remove favorites */}
-            {/* <button className="btn btn-primary">Add to favorites</button> */}
+          <div className={styles.detailsContent}>
+            <div className={styles.topBar}>
+              <div className={styles.titleWithFavorite}>
+                <h2>{movie.title}</h2>
+                <FavoriteButton movieId={movie._id} />
+              </div>
+              <Link to="/catalog" className="btn btn-outline">
+                Back to catalog
+              </Link>
+            </div>
+            <p className={styles.detailsMeta}>
+              Year: {movie.year} · {movie.duration} min
+            </p>
+            <p>{movie.genre}</p>
+            <p className={styles.detailsRating}>
+              Rating: <strong> {movie.rating} / 5</strong> ★
+            </p>
+            <p className={styles.detailsDescription}>
+              <h3>Overview</h3>
+              {movie.description}
+            </p>
+            <div className={styles.detailsActions}>
+        
 
-            {isOwner && (
-              <>
-                <Link to={`/movies/${movieId}/edit`} className="btn btn-ghost">
-                  Edit
-                </Link>
-                <button className="btn btn-danger" onClick={deleteMovieHandler}>
-                  Delete
-                </button>
-              </>
-            )}
+              {isOwner && (
+                <>
+                  <Link to={`/movies/${movieId}/edit`} className="btn btn-ghost">
+                    Edit
+                  </Link>
+                  <button className="btn btn-danger" onClick={deleteMovieHandler}>
+                    Delete
+                  </button>
+                </>
+              )}
+            </div>
           </div>
         </div>
       </div>
