@@ -3,6 +3,7 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import useMovieService from '../../../hooks/useMovieService.js';
 import { useEffect, useState } from 'react';
 import { useAuthContext } from '../../../contexts/AuthContext.jsx';
+import FavoriteButton from '../../favorites/favoriteButton/FavoriteButton.jsx';
 
 export default function Details() {
   const { movieId } = useParams();
@@ -46,10 +47,14 @@ export default function Details() {
           <img src={movie.imageUrl} alt={movie.title} />
         </div>
         <div className={styles.detailsContent}>
-          <h2>{movie.title}</h2>
+          <div className={styles.titleWithFavorite}>
+            <h2>{movie.title}</h2>
+            <FavoriteButton movieId={movie._id} />
+          </div>
           <p className={styles.detailsMeta}>
-            {movie.year} · {movie.duration} min · {movie.genre}
+            Year: {movie.year} · {movie.duration} min
           </p>
+          <p>{movie.genre}</p>
           <p className={styles.detailsRating}>
             Rating: <strong> {movie.rating} / 5</strong> ★
           </p>
