@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styles from './Header.module.css';
 
 import NavItem from './NavItem.jsx';
@@ -29,12 +29,12 @@ export default function Header() {
         <div className={styles.authNav}>
           {isGuest && (
             <>
-              <Link to="/login" className="btn btn-ghost">
+              <NavLink to="/login" className={({ isActive }) => `${styles.navLink} ${isActive ? styles.isActive : ''}`}>
                 Login
-              </Link>
-              <Link to="/register" className="btn btn-ghost">
+              </NavLink>
+              <NavLink to="/register" className={({ isActive }) => `${styles.navLink} ${isActive ? styles.isActive : ''}`}>
                 Register
-              </Link>
+              </NavLink>
             </>
           )}
 
