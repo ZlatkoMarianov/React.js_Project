@@ -40,10 +40,14 @@ export function AuthProvider({ children }) {
   };
 
   const logoutHandler = async () => {
-    // TODO fix await request('/users/logout', 'GET');
-
-    setUser(null);
-    localStorage.removeItem('auth');
+    try {
+      await request('/users/logout', 'POST');
+    } catch {
+      alert('Logout failed on server, but you have been logged out locally.')
+    } finally {
+      setUser(null);
+      localStorage.removeItem('auth');
+    }
   };
 
   const authContextValues = {

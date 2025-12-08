@@ -15,7 +15,6 @@ export default function Details() {
   useEffect(() => {
     getOne(movieId)
       .then((result) => {
-        // console.log('got movie:', result);
         setMovie(result);
       })
       .catch(() => navigate('/catalog'));
@@ -64,10 +63,10 @@ export default function Details() {
             <p className={styles.detailsRating}>
               Rating: <strong> {movie.rating} / 5</strong> ★
             </p>
-            <p className={styles.detailsDescription}>
+            <div className={styles.detailsDescription}>
               <h3>Overview</h3>
-              {movie.description}
-            </p>
+              <p>{movie.description}</p>
+            </div>
             <div className={styles.detailsActions}>
         
 

@@ -26,7 +26,7 @@ export default function Home() {
         setAvgRating(avg);
       }
     });
-  }, [getLatest, getCount, getFavoriteCount, getAll]);
+  }, []);
 
   return (
     <>
