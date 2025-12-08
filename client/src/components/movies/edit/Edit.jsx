@@ -2,15 +2,20 @@ import { useNavigate, useParams } from 'react-router';
 import useMovieService from '../../../hooks/useMovieService.js';
 import { useEffect, useState } from 'react';
 import EditForm from './EditForm.jsx';
+import Spinner from '../../common/Spinner.jsx';
 
 export default function Edit() {
   const { movieId } = useParams();
   const navigate = useNavigate();
   const { getOne, update } = useMovieService();
   const [movie, setMovie] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getOne(movieId).then((result) => setMovie(result));
+    setLoading(true);
+    getOne(movieId)
+      .then((result) => setMovie(result))
+      .finally(() => setLoading(false));
   }, [movieId]);
 
   const editMovieHandler = async (values) => {
@@ -22,8 +27,8 @@ export default function Edit() {
     }
   };
 
-  if (!movie) {
-    return <p>Loading...</p>;
+  if (loading) {
+    return <Spinner />;
   }
 
   return <EditForm key={movieId} movie={movie} editMovieHandler={editMovieHandler} />;
