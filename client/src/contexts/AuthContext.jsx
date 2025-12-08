@@ -27,8 +27,15 @@ export function AuthProvider({ children }) {
   }, []);
 
   const saveAuth = (authData) => {
-    setUser(authData);
-    localStorage.setItem('auth', JSON.stringify(authData));
+    if (!authData) {
+      setUser(null);
+      localStorage.removeItem('auth');
+      return;
+    }
+
+    const { password, ...safeData } = authData;
+    setUser(safeData);
+    localStorage.setItem('auth', JSON.stringify(safeData));
   };
 
   const loginHandler = async (email, password) => {
