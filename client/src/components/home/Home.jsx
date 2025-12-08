@@ -10,14 +10,23 @@ export default function Home() {
   const [latestMovies, setLatestMovies] = useState([]);
   const [movieCount, setMovieCount] = useState(0);
   const [favoritesCount, setFavoritesCount] = useState(0);
-  const { getLatest, getCount } = useMovieService();
+  const [avgRating, setAvgRating] = useState(0);
+  const { getLatest, getCount, getAll } = useMovieService();
   const { getFavoriteCount } = useFavoriteService();
 
   useEffect(() => {
     getLatest().then((result) => setLatestMovies(result));
     getCount().then((count) => setMovieCount(count));
     getFavoriteCount().then((count) => setFavoritesCount(count));
-  }, [getLatest,getCount, getFavoriteCount]);
+
+    getAll().then((movies) => {
+      if (movies.length) {
+        const sum = movies.reduce((acc, m) => acc + Number(m.rating), 0);
+        const avg = (sum / movies.length).toFixed(1);
+        setAvgRating(avg);
+      }
+    });
+  }, [getLatest, getCount, getFavoriteCount, getAll]);
 
   return (
     <>
@@ -41,21 +50,15 @@ export default function Home() {
           <div className={styles.heroCard}>
             <h2>CineVerse Stats</h2>
 
-            {/* // TODO: change to dynamic data */}
             <div className={styles.statsGrid}>
               <div className={styles.statBox}>
                 <span>🎬 Movies</span>
                 <strong>{movieCount}</strong>
               </div>
 
-              {/* <div className={styles.statBox}>
-                <span>👤 Members</span>
-                <strong>42</strong>
-              </div> */}
-
               <div className={styles.statBox}>
                 <span>⭐ Rating</span>
-                <strong>4.3</strong>
+                <strong>{avgRating}</strong>
               </div>
 
               <div className={styles.statBox}>
