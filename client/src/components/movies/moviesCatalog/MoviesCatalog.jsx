@@ -27,9 +27,13 @@ export default function MoviesCatalog() {
       <div className={styles.sectionHeader}>
         <h2>Movies Catalog</h2>
       </div>
-      
+
       <div className="movie-grid">
-        {movies.length === 0 && <p className={styles.emptyMessage}>No movies added yet!</p>}
+        {movies.length === 0 && (
+          <div className={styles.emptyMessage}>
+            <p>No movies added yet!</p>
+          </div>
+        )}
         {movies.map((movie) => (
           <MovieCard key={movie._id} movie={movie} />
         ))}

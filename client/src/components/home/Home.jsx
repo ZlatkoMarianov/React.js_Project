@@ -72,6 +72,11 @@ export default function Home() {
       <section className="section">
         <h2>Latest Movies</h2>
         <div className="movie-grid">
+          {latestMovies.length === 0 && (
+            <div className={styles.emptyMessage}>
+              <p>No movies added yet!</p>
+            </div>
+          )}
           {latestMovies.map((movie) => (
             <MovieCard key={movie._id} movie={movie} />
           ))}

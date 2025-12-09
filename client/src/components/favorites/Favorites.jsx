@@ -5,7 +5,6 @@ import useMovieService from '../../hooks/useMovieService.js';
 import MovieCard from '../movies/movieCard/MovieCard.jsx';
 import styles from './Favorites.module.css';
 import Spinner from '../common/Spinner.jsx';
-import { toast } from 'react-toastify';
 
 export default function Favorites() {
   const { user } = useAuthContext();
@@ -23,7 +22,6 @@ export default function Favorites() {
           const moviesData = await Promise.all(moviePromises);
           setMovies(moviesData);
         })
-        .catch((err) => toast.error(err.message))
         .finally(() => setLoading(false));
     }
   }, [user?._id]);
@@ -39,7 +37,11 @@ export default function Favorites() {
         <p className="section-subtitle">Movies you've marked as favorites.</p>
       </div>
       <div className={`movie-grid ${styles.favoritesGrid}`}>
-        {movies.length === 0 && <p className={styles.emptyMessage}>You haven't added any favorites yet!</p>}
+        {movies.length === 0 && (
+          <div className={styles.emptyMessage}>
+            <p>You haven't added any favorites yet!</p>
+          </div>
+        )}
         {movies.map((movie) => (
           <MovieCard key={movie._id} movie={movie} />
         ))}

@@ -102,6 +102,17 @@
     box-shadow: none;
 }
 
+.emptyMessage {
+    text-align: center;
+    padding: 3rem;
+    grid-column: 1 / -1; 
+}
+
+.emptyMessage p {
+    font-size: 1.2rem;
+    color: #c8c7d3;
+}
+
 @media (max-width: 900px) {
     .hero {
         grid-template-columns: 1fr;
