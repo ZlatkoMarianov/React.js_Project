@@ -5,17 +5,23 @@ import { useEffect, useState } from 'react';
 import useMovieService from '../../hooks/useMovieService.js';
 import MovieCard from '../movies/movieCard/MovieCard.jsx';
 import useFavoriteService from '../../hooks/useFavoriteService.js';
+import Spinner from '../common/Spinner.jsx';
 
 export default function Home() {
   const [latestMovies, setLatestMovies] = useState([]);
   const [movieCount, setMovieCount] = useState(0);
   const [favoritesCount, setFavoritesCount] = useState(0);
+  const [latestMoviesLoading, setLatestMoviesLoading] = useState(true);
   const [avgRating, setAvgRating] = useState(0);
   const { getLatest, getCount, getAll } = useMovieService();
   const { getFavoriteCount } = useFavoriteService();
 
   useEffect(() => {
-    getLatest().then((result) => setLatestMovies(result));
+    setLatestMoviesLoading(true);
+    getLatest()
+      .then((result) => setLatestMovies(result))
+      .finally(() => setLatestMoviesLoading(false));
+
     getCount().then((count) => setMovieCount(count));
     getFavoriteCount().then((count) => setFavoritesCount(count));
 
@@ -71,16 +77,20 @@ export default function Home() {
       </section>
       <section className="section">
         <h2>Latest Movies</h2>
-        <div className="movie-grid">
-          {latestMovies.length === 0 && (
-            <div className={styles.emptyMessage}>
-              <p>No movies added yet!</p>
-            </div>
-          )}
-          {latestMovies.map((movie) => (
-            <MovieCard key={movie._id} movie={movie} />
-          ))}
-        </div>
+        {latestMoviesLoading ? (
+          <Spinner />
+        ) : (
+          <div className="movie-grid">
+            {latestMovies.length === 0 && (
+              <div className={styles.emptyMessage}>
+                <p>No movies added yet!</p>
+              </div>
+            )}
+            {latestMovies.map((movie) => (
+              <MovieCard key={movie._id} movie={movie} />
+            ))}
+          </div>
+        )}
       </section>
     </>
   );
