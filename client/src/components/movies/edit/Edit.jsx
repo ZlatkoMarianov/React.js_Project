@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router';
+import { useNavigate, useParams } from 'react-router-dom';
 import useMovieService from '../../../hooks/useMovieService.js';
 import { useEffect, useState } from 'react';
 import EditForm from './EditForm.jsx';

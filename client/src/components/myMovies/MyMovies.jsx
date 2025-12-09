@@ -28,7 +28,6 @@ export default function MyMovies() {
     <section className={`section ${styles.myMoviesPage}`}>
       <div className={styles.sectionHeader}>
         <h2>My Movies</h2>
-        {/* // TODO : to change section-subtitle */}
         <p className="section-subtitle">Movies you have created.</p>
       </div>
       <div className={`movie-grid ${styles.myMoviesGrid}`}>

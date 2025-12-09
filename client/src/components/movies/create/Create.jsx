@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import useMovieService from '../../../hooks/useMovieService.js';
 import MovieForm from '../movieForm/MovieForm.jsx';
 import useForm from '../../../hooks/useForm.js';

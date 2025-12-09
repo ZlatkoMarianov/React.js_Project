@@ -33,7 +33,7 @@ export function AuthProvider({ children }) {
       return;
     }
 
-    const { password, ...safeData } = authData;
+    const { password: _password, ...safeData } = authData;
     setUser(safeData);
     localStorage.setItem('auth', JSON.stringify(safeData));
   };

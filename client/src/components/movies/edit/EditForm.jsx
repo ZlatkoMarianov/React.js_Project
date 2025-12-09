@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import useForm from '../../../hooks/useForm.js';
 import MovieForm from '../movieForm/MovieForm.jsx';
 import useValidation from '../../../hooks/useValidation.js';

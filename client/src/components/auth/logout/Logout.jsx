@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useAuthContext } from '../../../contexts/AuthContext.jsx';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 export default function Logout() {

@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from '../Auth.module.css';
 import { useAuthContext } from '../../../contexts/AuthContext.jsx';
 import useValidation from '../../../hooks/useValidation.js';
